@@ -5,6 +5,14 @@ import React, {
   View
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+var myButton = (
+  <Icon.Button name="facebook" backgroundColor="#3b5998" onPress={this.loginWithFacebook}>
+    Login with Facebook
+  </Icon.Button>
+);
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -16,14 +24,13 @@ const styles = StyleSheet.create({
   }
 });
 
-class Home extends Component{
+export default class Home extends Component{
   render() {
     return(
       <View style={styles.container}>
         <Text style={styles.title}>Fin End</Text>
+        {myButton}
       </View>
     );
   }
 }
-
-module.exports = Home;
