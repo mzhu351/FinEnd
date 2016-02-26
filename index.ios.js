@@ -12,6 +12,8 @@ import React, {
   View
 } from 'react-native';
 
+var Icon = require('react-native-vector-icons/Ionicons');
+
 import Home from './app/Home';
 import Search from './app/Search';
 import Category from './app/Category';
@@ -30,30 +32,38 @@ class finEnd extends Component {
       <TabBarIOS
         tintColor="white"
         barTintColor="#B0E2FF">
-        <TabBarIOS.Item
-          systemIcon="featured"
+        <Icon.TabBarItem
+          title="Home"
+          iconName="ios-home"
+          selectedIconName="ios-home"
           selected={this.state.selectedTab === "home"}
           onPress={() => this.setTab('home')}>
           <Home/>
-        </TabBarIOS.Item>
-        <TabBarIOS.Item
-          systemIcon="search"
+        </Icon.TabBarItem>
+        <Icon.TabBarItem
+          title="Search"
+          iconName="ios-search"
+          selectedIconName="ios-search"
           selected={this.state.selectedTab === "search"}
           onPress={() => this.setTab('search')}>
           <Search/>
-        </TabBarIOS.Item>
-        <TabBarIOS.Item
-          systemIcon="favorites"
+        </Icon.TabBarItem>
+        <Icon.TabBarItem
+          title="Category"
+          iconName="bookmark"
+          selectedIconName="bookmark"
           selected={this.state.selectedTab === "category"}
           onPress={() => this.setTab('category')}>
           <Category/>
-        </TabBarIOS.Item>
-        <TabBarIOS.Item
-          systemIcon="more"
+        </Icon.TabBarItem>
+        <Icon.TabBarItem
+          title="More"
+          iconName="ios-more"
+          selectedIconName="ios-more"
           selected={this.state.selectedTab === "more"}
           onPress={() => this.setTab('more')}>
           <More/>
-        </TabBarIOS.Item>
+        </Icon.TabBarItem>
       </TabBarIOS>
     );
   }
